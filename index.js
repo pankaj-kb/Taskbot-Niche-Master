@@ -1,6 +1,19 @@
 const TelegramBot = require('node-telegram-bot-api');
 const token = '1704591105:AAHTflbnxoQjj-kcsqwfE1Rui9--6AU3gyw';
 const bot = new TelegramBot(token, {polling: true});
+const express = require('express')
+const bodyParser = require('body-parser');
+ 
+const app = express();
+ 
+app.use(bodyParser.json());
+ 
+app.listen(process.env.PORT);
+ 
+app.post('/' + bot.token, (req, res) => {
+  bot.processUpdate(req.body);
+  res.sendStatus(200);
+});
      
 bot.on('message', (msg) => {
 
@@ -33,16 +46,4 @@ bot.on('message', (msg) => {
             });
             
             });
-            const express = require('express')
-const bodyParser = require('body-parser');
- 
-const app = express();
- 
-app.use(bodyParser.json());
- 
-app.listen(process.env.PORT);
- 
-app.post('/' + bot.token, (req, res) => {
-  bot.processUpdate(req.body);
-  res.sendStatus(200);
-});
+            
