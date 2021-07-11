@@ -22,7 +22,7 @@ bot.on('message', (msg) => {
     bot.sendMessage(msg.chat.id,"hey !! "+ msg.from.first_name);
     }
     var bye = "bye";
-    if (msg.text.toString().toLowerCase().includes(bye) || msg.text.toString().toLowerCase().includes("see yaa")) {
+    if (msg.text.toString().toLowerCase().includes(bye) || msg.text.toString().includes("see yaa")) {
         bot.sendMessage(msg.chat.id, " bye !! " + msg.from.first_name + " Do Something Great");
     }
     var formality = "how are you";
