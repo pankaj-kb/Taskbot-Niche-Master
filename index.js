@@ -23,7 +23,7 @@ bot.on('message', (msg) => {
     }
     var bye = "bye";
     if (msg.text.toString().toLowerCase().includes(bye) || msg.text.toString().toLowerCase().includes("see yaa")) {
-        bot.sendMessage(msg.chat.id, "Do Something great " + msg.from.first_name + " bye !!");
+        bot.sendMessage(msg.chat.id, " bye !! " + msg.from.first_name + " Do Something Great");
     }
     var formality = "how are you";
     if (msg.text.toString().toLowerCase().includes(formality) || msg.text.toString().toLowerCase().includes("how are you ?")) {
