@@ -3,9 +3,6 @@ const token = '1704591105:AAHTflbnxoQjj-kcsqwfE1Rui9--6AU3gyw';
 const bot = new TelegramBot(token, {polling: true});
 const express = require('express');
 const bodyParser = require('body-parser');
-var config = require('./config.js');
-
- 
 const app = express();
  
 app.use(bodyParser.json());
