@@ -29,11 +29,15 @@ bot.on('message', (msg) => {
     }
     var formality = "how are you";
     if (msg.text.toString().toLowerCase().includes(formality) || msg.text.toString().toLowerCase().includes("how are you ?")) {
-        bot.sendMessage(msg.chat.id, "I am good , Just Like a Bot");
+        bot.sendMessage(msg.chat.id, "I am having great time , Just Like a Bot");
     }
 
     var appreciate = "thanks";
-        if (msg.text.includes(appreciate) || msg.text.toString().toLowerCase().includes("well done") || msg.text.toString().toLowerCase().includes("good job") === 0) {
+        if (msg.text.includes(appreciate) || msg.text.toString().toLowerCase().includes("well done")) {
+            bot.sendMessage(msg.chat.id, "Its a Pleasure ✌");
+        }
+    var appreciate2 = "good job";
+        if(msg.text.includes(appreciate2)){
             bot.sendMessage(msg.chat.id, "Its a Pleasure ✌");
         }
 
