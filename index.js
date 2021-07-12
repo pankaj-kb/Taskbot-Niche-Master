@@ -26,7 +26,7 @@ bot.on('message', (msg) => {
     }
     var formality = "how are you";
     if (msg.text.toString().toLowerCase().includes(formality) || msg.text.toString().toLowerCase().includes("how are you ?")) {
-        bot.sendMessage(msg.chat.id, "I am having great time , Just Like a Bot");
+        bot.sendMessage(msg.chat.id, "I am having great time , Just Like a 🤖");
     }
 
     var appreciate = "thanks";
@@ -39,7 +39,7 @@ bot.on('message', (msg) => {
     }
     var ok = "ok";
     if (msg.text.toString().toLowerCase().includes(ok) || msg.text.toString().toLowerCase().includes("👍")){
-        bot.sendMessage(msg.chat.id, "👍🆗");
+        bot.sendMessage(msg.chat.id, "👍");
     }
 
     });
