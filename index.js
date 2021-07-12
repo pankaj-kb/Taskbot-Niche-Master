@@ -30,13 +30,13 @@ bot.on('message', (msg) => {
     }
 
     var appreciate = "thanks";
-        if (msg.text.includes(appreciate) || msg.text.toString().toLowerCase().includes("well done")) {
-            bot.sendMessage(msg.chat.id, "Its a Pleasure ✌");
-        }
+    if (msg.text.toString().toLowerCase().includes(appreciate) || msg.text.toString().toLowerCase().includes("well done")) {
+        bot.sendMessage(msg.chat.id, "Its a Pleasure ✌");
+    }
     var appreciate2 = "good job";
-        if(msg.text.includes(appreciate2)){
-            bot.sendMessage(msg.chat.id, "Its a Pleasure ✌");
-        }
+    if (msg.text.toString().toLowerCase().includes(appreciate2)){
+        bot.sendMessage(msg.chat.id, "Its a Pleasure ✌");
+    }
 
     });
    
