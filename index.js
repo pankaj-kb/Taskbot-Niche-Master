@@ -37,6 +37,10 @@ bot.on('message', (msg) => {
     if (msg.text.toString().toLowerCase().includes(appreciate2)){
         bot.sendMessage(msg.chat.id, "Its a Pleasure ✌");
     }
+    var ok = "ok";
+    if (msg.text.toString().toLowerCase().includes(ok) || msg.text.toString().toLowerCase().includes("👍")){
+        bot.sendMessage(msg.chat.id, "👍🆗");
+    }
 
     });
    
