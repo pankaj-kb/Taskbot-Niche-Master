@@ -41,7 +41,9 @@ bot.on('message', (msg) => {
     if (msg.text.toString().toLowerCase().includes(ok) || msg.text.toString().toLowerCase().includes("👍")){
         bot.sendMessage(msg.chat.id, "👍");
     }
-    else {
+    var after = greet,bye,formality,appreciate,appreciate2,ok;
+    if (msg.text.toString().toLowerCase().includes(after)){
+    } else {
 
         ("🥺 Out of my Knowledge");
     }
