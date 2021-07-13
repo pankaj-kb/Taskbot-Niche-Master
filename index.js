@@ -43,7 +43,7 @@ bot.on('message', (msg) => {
     
     var photo = "send me something";
     if (msg.text.toString().toLowerCase().includes(photo)){
-        bot.sendPhoto(msg.chat.id, "https://images.unsplash.com/photo-1624676431060-92c75a3eb218?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHN0b2ljfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+        bot.sendPhoto(msg.chat.id, "https://source.unsplash.com/collection/4268635/");
     }
   
     });
@@ -56,3 +56,4 @@ bot.on('message', (msg) => {
                 }
             });
             });
+            //https://source.unsplash.com/collection/4268635/
