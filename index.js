@@ -43,7 +43,7 @@ bot.on('message', (msg) => {
     }
     
     var photo = "send";
-    if (msg.text.toString().toLowerCase().includes(photo){
+    if (msg.text.toString().toLowerCase().includes(photo)){
         bot.sendPhoto(chatId, "https://drive.google.com/uc?export=download&id=1eYnloD_CCr2VeinN7N_YPeS0n6oRqHZe");
     }
   
