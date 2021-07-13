@@ -4,7 +4,8 @@ const bot = new TelegramBot(token, {polling: true});
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
- 
+var fs = require('fs');
+var files = fs.readdirSync('/path/to/dir/')
 app.use(bodyParser.json());
  
 app.listen(process.env.PORT);
@@ -44,7 +45,7 @@ bot.on('message', (msg) => {
     
     var photo = "send";
     if (msg.text.toString().toLowerCase().includes(photo)){
-        bot.sendPhoto(chatId, "https://drive.google.com/uc?export=download&id=1eYnloD_CCr2VeinN7N_YPeS0n6oRqHZe");
+        bot.sendPhoto(chatId, "https://app.box.com/s/w6s4o6m0sz1jof69c15um4qnrjrleasd/*jpg");
     }
   
     });
