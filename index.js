@@ -43,7 +43,7 @@ bot.on('message', (msg) => {
     
     var photo = "send me something";
     if (msg.text.toString().toLowerCase().includes(photo)){
-        bot.sendPhoto(msg.chat.id, "https://source.unsplash.com/collection/4268635/");
+        bot.sendPhoto(msg.chat.id, "https://source.unsplash.com/1600x900/?motivational,inspirational,quote");
     }
   
     });
