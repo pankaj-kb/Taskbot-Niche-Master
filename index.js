@@ -31,16 +31,17 @@ bot.on('message', (msg) => {
 
     var appreciate = "thanks";
     if (msg.text.toString().toLowerCase().includes(appreciate) || msg.text.toString().toLowerCase().includes("well done")) {
-        bot.sendMessage(msg.chat.id, "Its a Pleasure ✌");
+        bot.sendMessage(msg.chat.id, "Its a Pleasure ♥");
     }
     var appreciate2 = "good job";
     if (msg.text.toString().toLowerCase().includes(appreciate2)){
-        bot.sendMessage(msg.chat.id, "Its a Pleasure ✌");
+        bot.sendMessage(msg.chat.id, "Its a Pleasure ♥");
     }
     var ok = "ok";
     if (msg.text.toString().toLowerCase().includes(ok) || msg.text.toString().toLowerCase().includes("👍")){
         bot.sendMessage(msg.chat.id, "👍");
     }
+    else ("🥺 Out of my Knowledge");
 
     });
    
