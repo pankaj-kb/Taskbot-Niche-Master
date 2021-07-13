@@ -4,8 +4,6 @@ const bot = new TelegramBot(token, {polling: true});
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-var fs = require('fs');
-var files = fs.readdirSync('/path/to/dir/')
 app.use(bodyParser.json());
  
 app.listen(process.env.PORT);
@@ -43,7 +41,7 @@ bot.on('message', (msg) => {
         bot.sendMessage(msg.chat.id, "👍");
     }
     
-    var photo = "send";
+    var photo = "send me something";
     if (msg.text.toString().toLowerCase().includes(photo)){
         bot.sendPhoto(msg.chat.id, "https://images.unsplash.com/photo-1624676431060-92c75a3eb218?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHN0b2ljfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
     }
@@ -54,9 +52,8 @@ bot.on('message', (msg) => {
 
         bot.sendMessage(msg.chat.id,"ok "+ msg.from.first_name + " Lets Get Productive", {
             "reply_markup": {
-                "keyboard": [["View Tasks", "Set-Up Tasks"],["Recent Accomplitioments"]]
+                "keyboard": [["View Tasks", "Set-Up Tasks"],["Recent Accomplitioments"],["send me something"]]
                 }
             });
             
             });
-            
