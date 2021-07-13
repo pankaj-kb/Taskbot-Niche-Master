@@ -58,8 +58,3 @@ bot.on('message', (msg) => {
         }
     });
  });
-            //https://source.unsplash.com/collection/4268635/
-    bot.onText(/\/send me something/, function (msg) {
-    bot.sendPhoto(msg.chat.id, "https://source.unsplash.com/collection/4268635/");
-
-    });
