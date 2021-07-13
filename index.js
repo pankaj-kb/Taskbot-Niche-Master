@@ -41,13 +41,16 @@ bot.on('message', (msg) => {
     if (msg.text.toString().toLowerCase().includes(ok) || msg.text.toString().toLowerCase().includes("👍")){
         bot.sendMessage(msg.chat.id, "👍");
     }
-    var after = greet,bye,formality,appreciate,appreciate2,ok;
-    if (msg.text.toString().toLowerCase().includes(after)){
-    } else {
-
-        ("🥺 Out of my Knowledge");
-    }
-
+    api.sendPhoto({
+        chat_id : message.chat.id,
+        caption: 'This is my test image',
+        photo: 'https://drive.google.com/file/d/1eYnloD_CCr2VeinN7N_YPeS0n6oRqHZe/view?usp=sharing'//replace your image url here
+    })
+    .then(function(data)
+    {
+        console.log(data);
+    });
+    
     });
    
     bot.onText(/\/start/, (msg) => {
