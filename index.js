@@ -49,11 +49,17 @@ bot.on('message', (msg) => {
     });
    
     bot.onText(/\/start/, (msg) => {
-
-        bot.sendMessage(msg.chat.id,"ok "+ msg.from.first_name + " Lets Get Productive", {
-            "reply_markup": {
-                "keyboard": [["View Tasks", "Set-Up Tasks"],["Recent Accomplitioments"],["send me something"]]
-                }
-            });
-            });
+    bot.sendMessage(msg.chat.id, "ok " + msg.from.first_name + " Lets Get Productive", {
+        'reply_markup': {
+            'keyboard': [['View Tasks', 'Set-Up Tasks'], ['Recent Accomplitioments'], ['Send Me Something']],
+            resize_keyboard: true,
+            one_time_keyboard: true,
+            force_reply: true,
+        }
+    });
+ });
             //https://source.unsplash.com/collection/4268635/
+    bot.onText(/\/send me something/, function (msg) {
+    bot.sendPhoto(msg.chat.id, "https://source.unsplash.com/collection/4268635/");
+
+    });
