@@ -51,6 +51,13 @@ bot.on('message', (msg) => {
     }
   
     });
+    bot.onText(/\/start/, (msg) => {
+
+        bot.sendMessage(msg.chat.id,"ok "+ msg.from.first_name + " Lets Get Productive", {
+            "reply_markup": {
+                "keyboard": [["View Tasks", "Set-Up Tasks"],["Recent Accomplitioments"],["send me something"]]
+                }
+            });
    
     bot.on(/^\/imageof (.+)$/, (msg, props) => {
         request(`https://unsplash.com/search/photos/${props.match[1]}`, function (error, response) { // Get the search results of bing
@@ -73,3 +80,4 @@ bot.on('message', (msg) => {
     
     // Actual function to send the photo
     const sendPhoto = (msg, url) => msg.reply.photo(url); // Send the photo
+});
