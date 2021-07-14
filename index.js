@@ -15,6 +15,11 @@ app.post('/' + bot.token, (req, res) => {
      
 bot.on('message', (msg) => {
 
+    var send = "send me something";
+    if (msg.text.toString().toLowerCase().includes(send)) {
+        bot.sendPhoto(msg.chat.id, "https://unsplash.com/photos/vXInUOv1n84");
+    }
+
     var greet = "hi";
     if (msg.text.toString().toLowerCase().includes(greet) || msg.text.toString().toLowerCase().includes("hello") || msg.text.toString().toLowerCase().includes("hey") ) {
     bot.sendMessage(msg.chat.id,"hey !! "+ msg.from.first_name);
@@ -40,10 +45,7 @@ bot.on('message', (msg) => {
     if (msg.text.toString().toLowerCase().includes(ok) || msg.text.toString().toLowerCase().includes("👍")){
         bot.sendMessage(msg.chat.id, "👍");
     }
-    var send = "send me something";
-    if (msg.text.toString().toLowerCase().includes(send)) {
-        bot.sendPhoto(msg.chat.id, "https://unsplash.com/photos/vXInUOv1n84");
-    }
+    
 
     });
     bot.onText(/\/start/, (msg) => {
