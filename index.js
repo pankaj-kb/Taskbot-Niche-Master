@@ -41,9 +41,9 @@ bot.on('message', (msg) => {
         bot.sendMessage(msg.chat.id, "👍");
     }
     });
-    
-    bot.onText(/\/send me something/ ,(msg) => {
-        bot.sendMessage(msg.chat.id, "https://picsum.photos/seed/quotes/200/300");
+    var send = "send me something";
+    bot.onText(/\/send/ ,(msg) => {
+        bot.sendPhoto(msg.chat.id, "https://unsplash.com/photos/vXInUOv1n84");
     });
    
     bot.onText(/\/start/, (msg) => {
