@@ -40,12 +40,17 @@ bot.on('message', (msg) => {
     if (msg.text.toString().toLowerCase().includes(ok) || msg.text.toString().toLowerCase().includes("👍")){
         bot.sendMessage(msg.chat.id, "👍");
     }
+
     });
+
+    bot.on('message', (msg) => {
+
     var send = "send me something";
-    bot.onText(/\/send/ ,(msg) => {
+    if (msg.text.toString().toLowerCase().includes(send)) {
         bot.sendPhoto(msg.chat.id, "https://unsplash.com/photos/vXInUOv1n84");
+    }
     });
-   
+    
     bot.onText(/\/start/, (msg) => {
     bot.sendMessage(msg.chat.id, "ok " + msg.from.first_name + " Lets Get Productive", {
         'reply_markup': {
