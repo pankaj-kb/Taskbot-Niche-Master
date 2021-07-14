@@ -1,5 +1,6 @@
+require('dotenv').config()
 const TelegramBot = require('node-telegram-bot-api');
-const token = '1704591105:AAHTflbnxoQjj-kcsqwfE1Rui9--6AU3gyw';
+const token = 'process.env.API_KEY';
 const bot = new TelegramBot(token, {polling: true});
 const express = require('express');
 const bodyParser = require('body-parser');
