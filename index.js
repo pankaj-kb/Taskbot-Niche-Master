@@ -43,7 +43,7 @@ bot.on('message', (msg) => {
     });
     
     bot.onText(/\/send me something/ ,(msg) => {
-        bot.sendPhoto(msg.chat.id, "https://picsum.photos/seed/quotes/200/300");
+        bot.sendMessage(msg.chat.id, "https://picsum.photos/seed/quotes/200/300");
     });
    
     bot.onText(/\/start/, (msg) => {
