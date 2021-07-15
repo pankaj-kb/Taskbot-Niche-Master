@@ -47,6 +47,10 @@ bot.on('message', (msg) => {
     if (msg.text.toString().toLowerCase().includes(ok) || msg.text.toString().toLowerCase().includes("👍")){
         bot.sendMessage(msg.chat.id, "👍");
     }
+    var hehe = "hehe";
+    if (msg.text.toString().toLowerCase().includes(hehe) || msg.text.toString().toLowerCase().includes("😉")){
+        bot.sendMessage(msg.chat.id, "😉");
+    }
     let count = 0;
 setInterval(
   () =>
