@@ -53,7 +53,7 @@ setInterval(
     require("node-fetch")(process.env.URL).then(() =>
       console.log(`[${++count}] here i pinged ${process.env.URL}`)
     ),
-  300000
+  280000
 );
     
 
