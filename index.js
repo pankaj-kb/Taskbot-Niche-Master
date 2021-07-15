@@ -13,7 +13,7 @@ app.post('/' + bot.token, (req, res) => {
   res.sendStatus(200);
 });
 const {PythonShell} = require('python-shell');
-let pyshell = new PythonShell('insight.py');
+var pyshell = new PythonShell('insight.py');
 
 bot.on('message', (msg) => {
 

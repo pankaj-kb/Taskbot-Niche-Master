@@ -9,7 +9,7 @@
 // });
 const {PythonShell} = require('python-shell');
 
-let pyshell = new PythonShell('insight.py');
+var pyshell = new PythonShell('insight.py');
 
   pyshell.on('message', function(insight) {
   console.log(insight);
