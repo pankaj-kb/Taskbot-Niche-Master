@@ -15,16 +15,9 @@ app.post('/' + bot.token, (req, res) => {
 });
 bot.on('message', (msg) => {
 
-    var sendme = function read(f) {
-        return fs.readFileSync(f).toString();
-      }
-      function include(f) {
-        eval.apply(global, [read(f)]);
-      }
-      
-      include('./quotes.js');
+    var quotes = require('quotes');
     if (msg.text.toString().toLowerCase().includes("Send Me Something")) {
-        bot.sendMessage(msg.chat.id, sendme );
+        bot.sendMessage(msg.chat.id, quotes.start() );
     }
 
     var greet = "hi";
