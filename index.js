@@ -47,6 +47,14 @@ bot.on('message', (msg) => {
     if (msg.text.toString().toLowerCase().includes(ok) || msg.text.toString().toLowerCase().includes("👍")){
         bot.sendMessage(msg.chat.id, "👍");
     }
+    let count = 0;
+setInterval(
+  () =>
+    require("node-fetch")(process.env.URL).then(() =>
+      console.log(`[${++count}] here i pinged ${process.env.URL}`)
+    ),
+  300000
+);
     
 
     });
