@@ -20,7 +20,7 @@ bot.on('message', (msg) => {
 
     var send = "send me something";
     if (msg.text.toString().toLowerCase().includes(send)) {
-        bot.sendMessage(msg.chat.id, console.log(quotes));
+        bot.sendMessage(msg.chat.id, console.log(insight));
     }
 
     var greet = "hi";
