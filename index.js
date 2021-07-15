@@ -1,13 +1,13 @@
 require('dotenv').config()
 console.log(process.env);
-const quotes = require("./quotes");
+var quotes = require('./quotes');
 const TelegramBot = require('node-telegram-bot-api');
 const token = process.env.TELEGRAM_TOKEN;
 const bot = new TelegramBot(token, {polling: true});
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-var insight = quotes;
+var child_process = require('child_process');
 app.use(bodyParser.json());
  
 app.listen(process.env.PORT);
@@ -16,11 +16,18 @@ app.post('/' + bot.token, (req, res) => {
   bot.processUpdate(req.body);
   res.sendStatus(200);
 });
+child_process.exec('node quotes.js', (error, stdout, stderr) => {
+    console.log(`${stdout}`);
+    console.log(`${stderr}`);
+    if (error !== null) {
+        console.log(`exec error: ${error}`);
+    }
+});
 bot.on('message', (msg) => {
 
-    var send = "send me something";
-    if (msg.text.toString().toLowerCase().includes(send)) {
-        bot.sendMessage(msg.chat.id, console.log(insight));
+    var sendme = "send me something";
+    if (msg.text.toString().toLowerCase().includes(sendme)) {
+        bot.sendMessage(msg.chat.id, );
     }
 
     var greet = "hi";
