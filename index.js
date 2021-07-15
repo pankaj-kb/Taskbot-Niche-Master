@@ -43,19 +43,7 @@ bot.on('message', (msg) => {
     if (msg.text.toString().toLowerCase().includes(hehe) || msg.text.toString().toLowerCase().includes("😉")){
         bot.sendMessage(msg.chat.id, "😉");
     }
-    var quotes = require('./quotes');
-    var child_process = (insight) => require('child_process');
-    child_process.exec('node quotes.js', (error, stdout, stderr) => {
-        console.log(`${stdout}`);
-        console.log(`${stderr}`);
-        if (error !== null) {
-            console.log(`exec error: ${error}`);
-        }
-        });
-    var sendme = "Elevate Me";
-    if (msg.text.toString().toLowerCase().includes(sendme)){
-        bot.sendMessage(msg.chat.id, child_process(insight));
-    }
+
     let count = 0;
 setInterval(
   () =>
@@ -65,6 +53,7 @@ setInterval(
   280000
 );
     });
+    
     bot.onText(/\/start/, (msg) => {
     bot.sendMessage(msg.chat.id, "ok " + msg.from.first_name + " Lets Get Productive", {
         'reply_markup': {
@@ -77,3 +66,18 @@ setInterval(
     });
     
  });
+    var quotes = require('./quotes');
+    var child_process = require('child_process');
+    child_process.exec('node quotes.js', (error, stdout, stderr) => {
+    console.log(`${stdout}`);
+    console.log(`${stderr}`);
+    if (error !== null) {
+        console.log(`exec error: ${error}`);
+    }
+});
+    const inspire = "Send Me Something";
+    bot.on('message', (msg) => {
+    if (msg.text.toString().toLowerCase().includes()=== inspire) {
+      bot.sendMessage(msg.chat.id, child_process.exec);
+    }
+});
