@@ -11,8 +11,8 @@ const {PythonShell} = require('python-shell');
 
 let pyshell = new PythonShell('insight.py');
 
-  pyshell.on('message', function(message) {
-  console.log(message);
+  pyshell.on('message', function(insight) {
+  console.log(insight);
 })
 
 pyshell.end(function (err) {
