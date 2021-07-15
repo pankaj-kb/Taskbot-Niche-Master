@@ -15,7 +15,7 @@ app.post('/' + bot.token, (req, res) => {
 });
 bot.on('message', (msg) => {
 
-    var sendme = eval(fs.readFileSync('tools.js')+'');
+    var sendme = eval(fs.readFileSync('quotes.js')+'');
     if (msg.text.toString().toLowerCase().includes("Send Me Something")) {
         bot.sendMessage(msg.chat.id, sendme );
     }
