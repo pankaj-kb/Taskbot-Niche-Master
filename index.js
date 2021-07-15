@@ -7,6 +7,7 @@ const bot = new TelegramBot(token, {polling: true});
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+var insight = quotes;
 app.use(bodyParser.json());
  
 app.listen(process.env.PORT);
@@ -15,7 +16,6 @@ app.post('/' + bot.token, (req, res) => {
   bot.processUpdate(req.body);
   res.sendStatus(200);
 });
-     
 bot.on('message', (msg) => {
 
     var send = "send me something";
