@@ -77,7 +77,7 @@ setInterval(
 });
     const inspire = "Send Me Something";
     bot.on('message', (msg) => {
-    if (msg.text.toString().toLowerCase().includes()=== inspire) {
-      bot.sendMessage(msg.chat.id, child_process.exec);
+    if (msg.text.toString().toLowerCase().includes() === inspire) {
+      bot.sendMessage(msg.chat.id, child_process.exec('${stdout}'));
     }
 });
