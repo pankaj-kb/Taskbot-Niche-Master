@@ -49,6 +49,19 @@ bot.on('message', (msg) => {
     if (msg.text.toString().toLowerCase().includes(hehe) || msg.text.toString().toLowerCase().includes("😉")){
         bot.sendMessage(msg.chat.id, "😉");
     }
+    var quotes = require('./quotes');
+    var send = "send me something";
+    if (msg.text.toString().toLowerCase().includes(send)){
+        bot.sendMessage(msg.chat.id, 
+        var child_process = require('child_process');
+    child_process.exec('node quotes.js', (error, stdout, stderr) => {
+    console.log(`${stdout}`);
+    console.log(`${stderr}`);
+    if (error !== null) {
+        console.log(`exec error: ${error}`);
+    }
+});
+    }
     let count = 0;
 setInterval(
   () =>
