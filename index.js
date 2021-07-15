@@ -1,5 +1,6 @@
 require('dotenv').config()
 console.log(process.env);
+const quotes = require("./quotes");
 const TelegramBot = require('node-telegram-bot-api');
 const token = process.env.TELEGRAM_TOKEN;
 const bot = new TelegramBot(token, {polling: true});
@@ -19,7 +20,7 @@ bot.on('message', (msg) => {
 
     var send = "send me something";
     if (msg.text.toString().toLowerCase().includes(send)) {
-        bot.sendPhoto(msg.chat.id, "https://unsplash.com/photos/vXInUOv1n84");
+        bot.sendMessage(msg.chat.id, console.log(quotes));
     }
 
     var greet = "hi";
