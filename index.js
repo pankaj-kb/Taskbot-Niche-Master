@@ -13,18 +13,8 @@ app.post('/' + bot.token, (req, res) => {
   res.sendStatus(200);
 });
 const {PythonShell} = require('python-shell');
-
 let pyshell = new PythonShell('insight.py');
 
-  pyshell.on('message', function(message) {
-  console.log(message);
-})
-
-pyshell.end(function (err) {
-  if (err){
-    throw err;
-  };
-});
 bot.on('message', (msg) => {
 
     var greet = "hi";
@@ -56,9 +46,12 @@ bot.on('message', (msg) => {
     if (msg.text.toString().toLowerCase().includes(hehe) || msg.text.toString().toLowerCase().includes("😉")){
         bot.sendMessage(msg.chat.id, "😉");
     }
-    var sendme = "Random Insight For Me";
+    var sendme = "sendme";
     if (msg.text.toString().toLowerCase().includes(sendme)){
-        bot.sendMessage(msg.chat.id, message);
+        bot.sendMessage(msg.chat.id, pyshell.on('message', function(inspire) {
+            console.log(inspire);
+    }
+    ));
     }
 
     let count = 0;

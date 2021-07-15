@@ -14,9 +14,3 @@ let pyshell = new PythonShell('insight.py');
   pyshell.on('message', function(insight) {
   console.log(insight);
 })
-
-pyshell.end(function (err) {
-  if (err){
-    throw err;
-  };
-});
