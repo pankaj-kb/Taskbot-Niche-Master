@@ -66,18 +66,3 @@ setInterval(
     });
     
  });
-    var quotes = require('./quotes');
-    var child_process = require('child_process');
-    child_process.exec('node quotes.js', (error, stdout, stderr) => {
-    console.log(`${stdout}`);
-    console.log(`${stderr}`);
-    if (error !== null) {
-        console.log(`exec error: ${error}`);
-    }
-});
-    const inspire = "Send Me Something";
-    bot.on('message', (msg) => {
-    if (msg.text.toString().toLowerCase().includes() === inspire) {
-      bot.sendMessage(msg.chat.id, child_process.exec('${stdout}'));
-    }
-});
