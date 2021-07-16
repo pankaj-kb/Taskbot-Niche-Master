@@ -8,6 +8,11 @@ const bodyParser = require('body-parser');
 const app = express();
 const {PythonShell} = require('python-shell');
 var pyshell = new PythonShell('insight.py');
+var test={};
+pyshell.on('message', function(inspire) {
+    console.log(inspire);
+    test=inspire;
+});
 app.use(bodyParser.json()); 
 app.listen(process.env.PORT); 
 app.post('/' + bot.token, (req, res) => {
@@ -47,7 +52,7 @@ bot.on('message', (msg) => {
     }
     var sendme = "sendme";
     if (msg.text.toString().toLowerCase().includes(sendme)){
-        bot.sendMessage(msg.chat.id, );
+        bot.sendMessage(msg.chat.id, test );
     }
 
     let count = 0;
