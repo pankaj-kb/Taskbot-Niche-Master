@@ -1,18 +1,19 @@
+require('dotenv').config()
+console.log(process.env);
 const TelegramBot = require('node-telegram-bot-api');
-const token = '1704591105:AAHTflbnxoQjj-kcsqwfE1Rui9--6AU3gyw';
+const token = process.env.TELEGRAM_TOKEN;
 const bot = new TelegramBot(token, {polling: true});
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-app.use(bodyParser.json());
- 
-app.listen(process.env.PORT);
- 
+const statusLines = require('random-status-lines');
+const statusline = statusLines.generate();
+app.use(bodyParser.json()); 
+app.listen(process.env.PORT); 
 app.post('/' + bot.token, (req, res) => {
   bot.processUpdate(req.body);
   res.sendStatus(200);
 });
-     
 bot.on('message', (msg) => {
 
     var greet = "hi";
@@ -40,17 +41,29 @@ bot.on('message', (msg) => {
     if (msg.text.toString().toLowerCase().includes(ok) || msg.text.toString().toLowerCase().includes("👍")){
         bot.sendMessage(msg.chat.id, "👍");
     }
-    
-    bot.onText(/\/send me something/),(msg) => {
-        bot.sendPhoto(msg.chat.id, "https://images.unsplash.com/photo-1564865878688-9a244444042a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
+    var hehe = "hehe";
+    if (msg.text.toString().toLowerCase().includes(hehe) || msg.text.toString().toLowerCase().includes("😉")){
+        bot.sendMessage(msg.chat.id, "😉");
     }
-  
+    var sendme = "send some insight";
+    if (msg.text.toString().toLowerCase().includes(sendme)){
+        bot.sendMessage(msg.chat.id, statusline);
+    }
+
+    let count = 0;
+setInterval(
+  () =>
+    require("node-fetch")(process.env.URL).then(() =>
+      console.log(`[${++count}] here i pinged ${process.env.URL}`)
+    ),
+  280000
+);
     });
-   
+    
     bot.onText(/\/start/, (msg) => {
     bot.sendMessage(msg.chat.id, "ok " + msg.from.first_name + " Lets Get Productive", {
         'reply_markup': {
-            'keyboard': [['View Tasks', 'Set-Up Tasks'], ['Recent Accomplitioments'], ['Send Me Something']],
+            'keyboard': [['View Tasks', 'Set-Up Tasks'], ['Recent Accomplitioments'], ['Send Some Insight']],
             resize_keyboard: true,
             one_time_keyboard: true,
             force_reply: true,
