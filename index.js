@@ -6,12 +6,8 @@ const bot = new TelegramBot(token, {polling: true});
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const {PythonShell} = require('python-shell');
-var pyshell = new PythonShell('insight.py');
-var test={};
-pyshell.on('message', function(inspire) {
-    test=inspire;
-});
+const statusLines = require('random-status-lines');
+const statusline = statusLines.generate();
 app.use(bodyParser.json()); 
 app.listen(process.env.PORT); 
 app.post('/' + bot.token, (req, res) => {
@@ -51,7 +47,7 @@ bot.on('message', (msg) => {
     }
     var sendme = "send some insight";
     if (msg.text.toString().toLowerCase().includes(sendme)){
-        bot.sendMessage(msg.chat.id, test );
+        bot.sendMessage(msg.chat.id, statusline);
     }
 
     let count = 0;
