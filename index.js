@@ -67,7 +67,7 @@ setInterval(
     bot.onText(/\/start/, (msg) => {
     bot.sendMessage(msg.chat.id, "ok " + msg.from.first_name + " Lets Get Productive", {
         'reply_markup': {
-            'keyboard': [['View Tasks', 'Set-Up Tasks'], ['Recent Accomplitioments'], ['Send Me']],
+            'keyboard': [['View Tasks', 'Set-Up Tasks'], ['Recent Accomplitioments'], ['Send Some Insight']],
             resize_keyboard: true,
             one_time_keyboard: true,
             force_reply: true,
