@@ -52,7 +52,7 @@ bot.on('message', (msg) => {
     }
     var sendme = "sendme";
     if (msg.text.toString().toLowerCase().includes(sendme)){
-        bot.sendMessage(msg.chat.id, test );
+        bot.sendMessage(msg.chat.id, console.log(test) );
     }
 
     let count = 0;
