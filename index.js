@@ -50,7 +50,7 @@ bot.on('message', (msg) => {
     if (msg.text.toString().toLowerCase().includes(hehe) || msg.text.toString().toLowerCase().includes("😉")){
         bot.sendMessage(msg.chat.id, "😉");
     }
-    var sendme = "sendme";
+    var sendme = "send me";
     if (msg.text.toString().toLowerCase().includes(sendme)){
         bot.sendMessage(msg.chat.id, consola.log(test) );
     }
