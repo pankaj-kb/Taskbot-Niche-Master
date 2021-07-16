@@ -1,5 +1,6 @@
 require('dotenv').config()
 console.log(process.env);
+import consola from "consola"
 const TelegramBot = require('node-telegram-bot-api');
 const token = process.env.TELEGRAM_TOKEN;
 const bot = new TelegramBot(token, {polling: true});
@@ -52,7 +53,7 @@ bot.on('message', (msg) => {
     }
     var sendme = "sendme";
     if (msg.text.toString().toLowerCase().includes(sendme)){
-        bot.sendMessage(msg.chat.id, console.log(test) );
+        bot.sendMessage(msg.chat.id, consola.log(test) );
     }
 
     let count = 0;
