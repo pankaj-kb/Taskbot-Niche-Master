@@ -6,15 +6,14 @@ const bot = new TelegramBot(token, {polling: true});
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const {PythonShell} = require('python-shell');
+var pyshell = new PythonShell('insight.py');
 app.use(bodyParser.json()); 
 app.listen(process.env.PORT); 
 app.post('/' + bot.token, (req, res) => {
   bot.processUpdate(req.body);
   res.sendStatus(200);
 });
-const {PythonShell} = require('python-shell');
-var pyshell = new PythonShell('insight.py');
-
 bot.on('message', (msg) => {
 
     var greet = "hi";
@@ -48,10 +47,7 @@ bot.on('message', (msg) => {
     }
     var sendme = "sendme";
     if (msg.text.toString().toLowerCase().includes(sendme)){
-        bot.sendMessage(msg.chat.id, pyshell.on('message', function(inspire) {
-            console.log(inspire);
-    }
-    ));
+        bot.sendMessage(msg.chat.id, );
     }
 
     let count = 0;
