@@ -10,7 +10,6 @@ const {PythonShell} = require('python-shell');
 var pyshell = new PythonShell('insight.py');
 var test={};
 pyshell.on('message', function(inspire) {
-    console.log(inspire);
     test=inspire;
 });
 app.use(bodyParser.json()); 
