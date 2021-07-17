@@ -6,6 +6,9 @@ const bot = new TelegramBot(token, {polling: true});
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const statusLines = require('random-status-lines');
+const statusline = statusLines.generate();
+var fetch = require("fetch");
 app.use(bodyParser.json()); 
 app.listen(process.env.PORT); 
 app.post('/' + bot.token, (req, res) => {
@@ -43,12 +46,18 @@ bot.on('message', (msg) => {
     if (msg.text.toString().toLowerCase().includes(hehe) || msg.text.toString().toLowerCase().includes("😉")){
         bot.sendMessage(msg.chat.id, "😉");
     }
-    var sendme = "send some insight";
-    if (msg.text.toString().toLowerCase().includes(sendme)){
-        bot.sendMessage(msg.chat.id, process.env.QUOTE);
+  bot.on('message', async (message) => {
+    const { chat, text, from } = message
+    switch (true) {
+        case (text == '.'): {
+            fetch('https://randomquotesbot.herokuapp.com/').then(res => res.text()).then(text => {
+                bot.sendMessage(msg.chat.id, text);
+            });
+        }
+        break;
     }
-
-    let count = 0;
+})
+let count = 0;
 setInterval(
   () =>
     require("node-fetch")(process.env.URL).then(() =>
@@ -61,7 +70,7 @@ setInterval(
     bot.onText(/\/start/, (msg) => {
     bot.sendMessage(msg.chat.id, "ok " + msg.from.first_name + " Lets Get Productive", {
         'reply_markup': {
-            'keyboard': [['📝 View Tasks', '✍ Set-Up Tasks'], ['🏆 Recent Accomplitioments'], ['💭🧠 Send Some Insight']],
+            'keyboard': [['📝 View Tasks', '✍ Set-Up Tasks'], ['🏆 Recent Accomplitioments'], ['🧠💭  Send Some Insight']],
             resize_keyboard: true,
             one_time_keyboard: true,
             force_reply: true,
