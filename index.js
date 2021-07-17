@@ -6,8 +6,6 @@ const bot = new TelegramBot(token, {polling: true});
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const statusLines = require('random-status-lines');
-const statusline = statusLines.generate();
 app.use(bodyParser.json()); 
 app.listen(process.env.PORT); 
 app.post('/' + bot.token, (req, res) => {
@@ -47,7 +45,7 @@ bot.on('message', (msg) => {
     }
     var sendme = "send some insight";
     if (msg.text.toString().toLowerCase().includes(sendme)){
-        bot.sendMessage(msg.chat.id, statusline);
+        bot.sendMessage(msg.chat.id, process.env.QUOTE);
     }
 
     let count = 0;
