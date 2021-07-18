@@ -56,8 +56,20 @@ console.log(err)
         bot.sendMessage(msg.chat.id, "👍");
     }
     var hehe = "hehe";
-    if (msg.text.toString().toLowerCase().includes(hehe) || msg.text.toString().toLowerCase().includes("😉")){
+    if (msg.text.toString().toLowerCase().includes(hehe)){
         bot.sendMessage(msg.chat.id, "😉");
+    }
+    var viewTasks = "View Tasks";
+    if (msg.text.toString().toLowerCase().includes(viewTasks)){
+        bot.sendMessage(msg.chat.id, "Feature is Upcoming");
+    }
+    var setupTasks = "Set-Up Tasks";
+    if (msg.text.toString().toLowerCase().includes(setupTasks)){
+        bot.sendMessage(msg.chat.id, "Feature is Upcoming");
+    }
+  var rAccomplitioments = "Recent Accomplitioments";
+    if (msg.text.toString().toLowerCase().includes(rAccomplitioments)){
+        bot.sendMessage(msg.chat.id, "Feature is Upcoming");
     }
 })
   bot.onText(/\/start/, (msg) => {
