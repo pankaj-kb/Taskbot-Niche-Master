@@ -5,6 +5,9 @@
   "main": "bot.js",
   "dependencies": {
     "dot-env": "^0.0.1",
+    "dotenv": "^10.0.0",
+    "node-fetch": "^2.6.1",
+    "node-telegram-bot-api": "^0.53.0",
     "telegram-bot-api": "^2.0.1"
   },
   "devDependencies": {},
