@@ -1,0 +1,25 @@
+{
+  "name": "taskbot",
+  "version": "1.0.0",
+  "description": "A Simple BOT To Set TODO and Tasks With Some Features Like , Random Quotes From Naval Ravikant",
+  "main": "bot.js",
+  "dependencies": {
+    "dot-env": "^0.0.1",
+    "telegram-bot-api": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pankaj-kb/taskbot.git"
+  },
+  "author": "pankaj-kb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pankaj-kb/taskbot/issues"
+  },
+  "homepage": "https://github.com/pankaj-kb/taskbot#readme"
+}
