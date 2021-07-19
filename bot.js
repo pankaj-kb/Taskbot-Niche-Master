@@ -2,21 +2,35 @@ require('dotenv').config()
 console.log(process.env);
 const TelegramBot = require('node-telegram-bot-api');
 const token = process.env.TELEGRAM_TOKEN;
-const bot = new TelegramBot(token, {polling: true});
-const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
-const statusLines = require('random-status-lines');
-const statusline = statusLines.generate();
-app.use(bodyParser.json()); 
-app.listen(process.env.PORT); 
-app.post('/' + bot.token, (req, res) => {
-  bot.processUpdate(req.body);
-  res.sendStatus(200);
-});
-bot.on('message', (msg) => {
-
-    var greet = "hi";
+const fetch = require("node-fetch")
+const bot = new TelegramBot(token, {
+    polling: {
+        interval: 300,
+        autoStart: true,
+        params: {
+            timeout: 10
+        }
+    }
+})
+bot.on('message', async (msg) => {
+    const { chat, text, from } = msg
+    switch (true) {
+        case (text == '🧠💭 Send Some Insight' || text == 'send some insight'): {
+            fetch('https://randomquotesbot.herokuapp.com/').then(res => res.text()).then(text => {
+            try{
+             setTimeout(async() => {
+                let c = await bot.sendPhoto(chat.id, text)
+                console.log(c)
+            })
+                
+} catch (err) {
+console.log(err)
+}
+            });
+        }
+        break;
+    }
+   var greet = "hi";
     if (msg.text.toString().toLowerCase().includes(greet) || msg.text.toString().toLowerCase().includes("hello") || msg.text.toString().toLowerCase().includes("hey") ) {
     bot.sendMessage(msg.chat.id,"hey !! "+ msg.from.first_name);
     }
@@ -42,28 +56,26 @@ bot.on('message', (msg) => {
         bot.sendMessage(msg.chat.id, "👍");
     }
     var hehe = "hehe";
-    if (msg.text.toString().toLowerCase().includes(hehe) || msg.text.toString().toLowerCase().includes("😉")){
+    if (msg.text.toString().toLowerCase().includes(hehe)){
         bot.sendMessage(msg.chat.id, "😉");
     }
-    var sendme = "send some insight";
-    if (msg.text.toString().toLowerCase().includes(sendme)){
-        bot.sendMessage(msg.chat.id, statusline);
+    var viewTasks = "View Tasks";
+    if (msg.text.toString().toLowerCase().includes(viewTasks)){
+        bot.sendMessage(msg.chat.id, "Feature is Upcoming");
     }
-
-    let count = 0;
-setInterval(
-  () =>
-    require("node-fetch")(process.env.URL).then(() =>
-      console.log(`[${++count}] here i pinged ${process.env.URL}`)
-    ),
-  280000
-);
-    });
-    
-    bot.onText(/\/start/, (msg) => {
-    bot.sendMessage(msg.chat.id, "ok " + msg.from.first_name + " Lets Get Productive", {
+    var setupTasks = "Set-Up Tasks";
+    if (msg.text.toString().toLowerCase().includes(setupTasks)){
+        bot.sendMessage(msg.chat.id, "Feature is Upcoming");
+    }
+  var rAccomplitioments = "Recent Accomplitioments";
+    if (msg.text.toString().toLowerCase().includes(rAccomplitioments)){
+        bot.sendMessage(msg.chat.id, "Feature is Upcoming");
+    }
+})
+  bot.onText(/\/start/, (msg) => {
+    bot.sendMessage(msg.chat.id, "Gear Up " + msg.from.first_name + " Lets Get Productive", {
         'reply_markup': {
-            'keyboard': [['View Tasks', 'Set-Up Tasks'], ['Recent Accomplitioments'], ['Send Some Insight']],
+            'keyboard': [['📝 View Tasks', '✍ Set-Up Tasks'], ['🏆 Recent Accomplitioments'], ['🧠💭 Lessons']],
             resize_keyboard: true,
             one_time_keyboard: true,
             force_reply: true,
