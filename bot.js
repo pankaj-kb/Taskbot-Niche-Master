@@ -59,15 +59,15 @@ console.log(err)
     if (msg.text.toString().toLowerCase().includes(hehe)){
         bot.sendMessage(msg.chat.id, "😉");
     }
-    var viewTasks = "View Tasks";
+    var viewTasks = "view tasks";
     if (msg.text.toString().toLowerCase().includes(viewTasks)){
         bot.sendMessage(msg.chat.id, "Feature is Upcoming");
     }
-    var setupTasks = "Set-Up Tasks";
+    var setupTasks = "set-up tasks";
     if (msg.text.toString().toLowerCase().includes(setupTasks)){
         bot.sendMessage(msg.chat.id, "Feature is Upcoming");
     }
-  var rAccomplitioments = "Recent Accomplitioments";
+  var rAccomplitioments = "recent accomplitioments";
     if (msg.text.toString().toLowerCase().includes(rAccomplitioments)){
         bot.sendMessage(msg.chat.id, "Feature is Upcoming");
     }
