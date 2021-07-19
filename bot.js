@@ -15,8 +15,8 @@ const bot = new TelegramBot(token, {
 bot.on('message', async (msg) => {
     const { chat, text, from } = msg
     switch (true) {
-        case (text == '🧠💭 Send Some Insight' || text == 'send some insight'): {
-            fetch('https://randomquotesbot.herokuapp.com/').then(res => res.text()).then(text => {
+        case (text == '🧠💭 Lessons' || text == 'lessons'): {
+            fetch('https://randomquotesbot.herokuapp.com/naval/').then(res => res.text()).then(text => {
             try{
              setTimeout(async() => {
                 let c = await bot.sendPhoto(chat.id, text)
