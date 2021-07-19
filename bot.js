@@ -16,7 +16,7 @@ bot.on('message', async (msg) => {
     const { chat, text, from } = msg
     switch (true) {
         case (text == '🧠💭 Lessons' || text == 'Lessons'): {
-            fetch('https://randomquotesbot.herokuapp.com/').then(res => res.text()).then(text => {
+            fetch('https://randomquotesbot.herokuapp.com/naval').then(res => res.text()).then(text => {
             try{
              setTimeout(async() => {
                 let c = await bot.sendPhoto(chat.id, text)
