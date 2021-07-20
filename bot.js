@@ -108,7 +108,7 @@ bot.on('message', async (msg) => {
             });
         }
         case (text == 'Swami Vivekanand'): {
-            fetch('https://randomquotesbot.herokuapp.com/swamiV').then(res => res.text()).then(text => {
+            fetch('https://randomquotesbot.herokuapp.com/swamiv').then(res => res.text()).then(text => {
             try{
              setTimeout(async() => {
                 let c = await bot.sendMessage(chat.id, text)
