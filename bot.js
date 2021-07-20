@@ -19,7 +19,7 @@ bot.on('message', async (msg) => {
             fetch('https://randomquotesbot.herokuapp.com/naval').then(res => res.text()).then(text => {
             try{
              setTimeout(async() => {
-                let c = await bot.sendPhoto(chat.id, text)
+                let c = await bot.bot.sendMessage(chat.id, text)
                 console.log(c)
             })
                 
@@ -33,7 +33,7 @@ bot.on('message', async (msg) => {
             fetch('https://randomquotesbot.herokuapp.com/nntaleb').then(res => res.text()).then(text => {
             try{
              setTimeout(async() => {
-                let c = await bot.sendPhoto(chat.id, text)
+                let c = await bot.bot.sendMessage(chat.id, text)
                 console.log(c)
             })
                 
@@ -46,7 +46,7 @@ bot.on('message', async (msg) => {
             fetch('https://randomquotesbot.herokuapp.com/marcus').then(res => res.text()).then(text => {
             try{
              setTimeout(async() => {
-                let c = await bot.sendPhoto(chat.id, text)
+                let c = await bot.bot.sendMessage(chat.id, text)
                 console.log(c)
             })
                 
@@ -59,7 +59,7 @@ bot.on('message', async (msg) => {
             fetch('https://randomquotesbot.herokuapp.com/chanakya').then(res => res.text()).then(text => {
             try{
              setTimeout(async() => {
-                let c = await bot.sendPhoto(chat.id, text)
+                let c = await bot.bot.sendMessage(chat.id, text)
                 console.log(c)
             })
                 
@@ -72,7 +72,7 @@ bot.on('message', async (msg) => {
             fetch('https://randomquotesbot.herokuapp.com/kapilgupta').then(res => res.text()).then(text => {
             try{
              setTimeout(async() => {
-                let c = await bot.sendPhoto(chat.id, text)
+                let c = await bot.bot.sendMessage(chat.id, text)
                 console.log(c)
             })
                 
@@ -85,7 +85,7 @@ bot.on('message', async (msg) => {
             fetch('https://randomquotesbot.herokuapp.com/seneca').then(res => res.text()).then(text => {
             try{
              setTimeout(async() => {
-                let c = await bot.sendPhoto(chat.id, text)
+                let c = await bot.bot.sendMessage(chat.id, text)
                 console.log(c)
             })
                 
@@ -98,7 +98,7 @@ bot.on('message', async (msg) => {
             fetch('https://randomquotesbot.herokuapp.com/socrates').then(res => res.text()).then(text => {
             try{
              setTimeout(async() => {
-                let c = await bot.sendPhoto(chat.id, text)
+                let c = await bot.sendMessage(chat.id, text)
                 console.log(c)
             })
                 
@@ -111,7 +111,7 @@ bot.on('message', async (msg) => {
             fetch('https://randomquotesbot.herokuapp.com/swamiV').then(res => res.text()).then(text => {
             try{
              setTimeout(async() => {
-                let c = await bot.sendPhoto(chat.id, text)
+                let c = await bot.sendMessage(chat.id, text)
                 console.log(c)
             })
                 
