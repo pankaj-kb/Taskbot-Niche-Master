@@ -15,7 +15,7 @@ const bot = new TelegramBot(token, {
 bot.on('message', async (msg) => {
     const { chat, text, from } = msg
     switch (true) {
-        case (text == 'Naval Ravikant'): {
+    case (text == 'Naval Ravikant'): {
             fetch('https://randomquotesbot.herokuapp.com/naval').then(res => res.text()).then(text => {
             try{
              setTimeout(async() => {
@@ -37,11 +37,13 @@ bot.on('message', async (msg) => {
                 console.log(c)
             })
                 
-    } catch (err) {
-    console.log(err)
-    }
-            });
+        } catch (err) {
+        console.log(err)
         }
+                });
+            }
+            break;
+
         case (text == 'Marcus Aurelius'): {
             fetch('https://randomquotesbot.herokuapp.com/marcus').then(res => res.text()).then(text => {
             try{
@@ -55,6 +57,8 @@ bot.on('message', async (msg) => {
     }
             });
         }
+        break;
+
         case (text == 'Chanakya'): {
             fetch('https://randomquotesbot.herokuapp.com/chanakya').then(res => res.text()).then(text => {
             try{
@@ -68,6 +72,8 @@ bot.on('message', async (msg) => {
     }
             });
         }
+        break;
+
         case (text == 'Kapil Gupta'): {
             fetch('https://randomquotesbot.herokuapp.com/kapilgupta').then(res => res.text()).then(text => {
             try{
@@ -81,6 +87,8 @@ bot.on('message', async (msg) => {
     }
             });
         }
+        break;
+
         case (text == 'Seneca'): {
             fetch('https://randomquotesbot.herokuapp.com/seneca').then(res => res.text()).then(text => {
             try{
@@ -94,6 +102,8 @@ bot.on('message', async (msg) => {
     }
             });
         }
+        break;
+
         case (text == 'Socrates'): {
             fetch('https://randomquotesbot.herokuapp.com/socrates').then(res => res.text()).then(text => {
             try{
@@ -107,6 +117,8 @@ bot.on('message', async (msg) => {
     }
             });
         }
+        break;
+        
         case (text == 'Swami Vivekanand'): {
             fetch('https://randomquotesbot.herokuapp.com/swamiv').then(res => res.text()).then(text => {
             try{
@@ -121,7 +133,7 @@ bot.on('message', async (msg) => {
             });
         }
     }
-    }) 
+    })
  bot.onText(/\/start/, (msg) => {
     bot.sendMessage(msg.chat.id, "Gear Up " + msg.from.first_name + " Lets Get Productive", {
         'reply_markup': {
