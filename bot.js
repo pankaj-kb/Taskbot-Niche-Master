@@ -15,7 +15,7 @@ const bot = new TelegramBot(token, {
 bot.on('message', async (msg) => {
     const { chat, text, from } = msg
     switch (true) {
-        case (text == '🧠💭 Lessons' || text == 'Lessons'): {
+        case (text == 'Naval Ravikant'): {
             fetch('https://randomquotesbot.herokuapp.com/naval').then(res => res.text()).then(text => {
             try{
              setTimeout(async() => {
@@ -23,12 +23,103 @@ bot.on('message', async (msg) => {
                 console.log(c)
             })
                 
-} catch (err) {
-console.log(err)
-}
+    } catch (err) {
+    console.log(err)
+    }
             });
         }
         break;
+        case (text == 'Nassim Taleb'): {
+            fetch('https://randomquotesbot.herokuapp.com/nntaleb').then(res => res.text()).then(text => {
+            try{
+             setTimeout(async() => {
+                let c = await bot.sendPhoto(chat.id, text)
+                console.log(c)
+            })
+                
+    } catch (err) {
+    console.log(err)
+    }
+            });
+        }
+        case (text == 'Marcus Aurelius'): {
+            fetch('https://randomquotesbot.herokuapp.com/marcus').then(res => res.text()).then(text => {
+            try{
+             setTimeout(async() => {
+                let c = await bot.sendPhoto(chat.id, text)
+                console.log(c)
+            })
+                
+    } catch (err) {
+    console.log(err)
+    }
+            });
+        }
+        case (text == 'Chanakya'): {
+            fetch('https://randomquotesbot.herokuapp.com/chanakya').then(res => res.text()).then(text => {
+            try{
+             setTimeout(async() => {
+                let c = await bot.sendPhoto(chat.id, text)
+                console.log(c)
+            })
+                
+    } catch (err) {
+    console.log(err)
+    }
+            });
+        }
+        case (text == 'Kapil Gupta'): {
+            fetch('https://randomquotesbot.herokuapp.com/kapilgupta').then(res => res.text()).then(text => {
+            try{
+             setTimeout(async() => {
+                let c = await bot.sendPhoto(chat.id, text)
+                console.log(c)
+            })
+                
+    } catch (err) {
+    console.log(err)
+    }
+            });
+        }
+        case (text == 'Seneca'): {
+            fetch('https://randomquotesbot.herokuapp.com/seneca').then(res => res.text()).then(text => {
+            try{
+             setTimeout(async() => {
+                let c = await bot.sendPhoto(chat.id, text)
+                console.log(c)
+            })
+                
+    } catch (err) {
+    console.log(err)
+    }
+            });
+        }
+        case (text == 'Socrates'): {
+            fetch('https://randomquotesbot.herokuapp.com/socrates').then(res => res.text()).then(text => {
+            try{
+             setTimeout(async() => {
+                let c = await bot.sendPhoto(chat.id, text)
+                console.log(c)
+            })
+                
+    } catch (err) {
+    console.log(err)
+    }
+            });
+        }
+        case (text == 'Swami Vivekanand'): {
+            fetch('https://randomquotesbot.herokuapp.com/swamiV').then(res => res.text()).then(text => {
+            try{
+             setTimeout(async() => {
+                let c = await bot.sendPhoto(chat.id, text)
+                console.log(c)
+            })
+                
+    } catch (err) {
+    console.log(err)
+    }
+            });
+        }
     }
    var greet = "hi";
     if (msg.text.toString().toLowerCase().includes(greet) || msg.text.toString().toLowerCase().includes("hello") || msg.text.toString().toLowerCase().includes("hey") ) {
@@ -76,6 +167,19 @@ console.log(err)
     bot.sendMessage(msg.chat.id, "Gear Up " + msg.from.first_name + " Lets Get Productive", {
         'reply_markup': {
             'keyboard': [['📝 View Tasks', '✍ Set-Up Tasks'], ['🏆 Recent Accomplitioments'], ['🧠💭 Lessons']],
+            resize_keyboard: true,
+            one_time_keyboard: true,
+            force_reply: true,
+        }
+
+    });
+    
+ });
+
+ bot.onText(/🧠💭 Lessons/, (msg) => {
+    bot.sendMessage(msg.chat.id, "From Who You Want To Learn ?", {
+        'reply_markup': {
+            'keyboard': [['Chanakya', 'Kapil Gupta'], ['Marcus Aurelius', 'Naval Ravikant'],['Nassim Taleb', 'Seneca'],['Socrates', 'Swami Vivekanad']],
             resize_keyboard: true,
             one_time_keyboard: true,
             force_reply: true,
