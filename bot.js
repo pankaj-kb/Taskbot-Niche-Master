@@ -133,7 +133,7 @@ bot.on('message', async (msg) => {
             });
         }
     }
-    })
+    });
  bot.onText(/\/start/, (msg) => {
     bot.sendMessage(msg.chat.id, "Gear Up " + msg.from.first_name + " Lets Get Productive", {
         'reply_markup': {
@@ -150,7 +150,7 @@ bot.on('message', async (msg) => {
  bot.onText(/🧠💭 Lessons/, (msg) => {
     bot.sendMessage(msg.chat.id, "From Who You Want To Learn ?", {
         'reply_markup': {
-            'keyboard': [['Chanakya', 'Kapil Gupta'], ['Marcus Aurelius', 'Naval Ravikant'],['Nassim Taleb', 'Seneca'],['Socrates', 'Swami Vivekanad']],
+            'keyboard': [['Chanakya', 'Kapil Gupta'], ['Marcus Aurelius', 'Naval Ravikant'],['Nassim Taleb', 'Seneca'],['Socrates', 'Swami Vivekanand']],
             resize_keyboard: true,
             one_time_keyboard: true,
             force_reply: true,
