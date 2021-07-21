@@ -137,7 +137,7 @@ bot.on('message', async (msg) => {
  bot.onText(/\/start/, (msg) => {
     bot.sendMessage(msg.chat.id, "Gear Up " + msg.from.first_name + " Lets Get Productive", {
         'reply_markup': {
-            'keyboard': [['📝 View Tasks', '✍ Set-Up Tasks'], ['🏆 Recent Accomplitioments'], ['🧠💭 Lessons']],
+            'keyboard': [['🧠💭 Lessons']],
             resize_keyboard: true,
             one_time_keyboard: true,
             force_reply: true,
@@ -152,7 +152,7 @@ bot.on('message', async (msg) => {
         'reply_markup': {
             'keyboard': [['Chanakya', 'Kapil Gupta'], ['Marcus Aurelius', 'Naval Ravikant'],['Nassim Taleb', 'Seneca'],['Socrates', 'Swami Vivekanand']],
             resize_keyboard: true,
-            one_time_keyboard: true,
+            one_time_keyboard: false,
             force_reply: true,
         }
 
