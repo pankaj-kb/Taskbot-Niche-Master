@@ -59,6 +59,21 @@ bot.on('message', async (msg) => {
         }
         break;
 
+        case (text == 'Rabindranath Tagore'): {
+            fetch('https://randomquotesbot.herokuapp.com/rtagore').then(res => res.text()).then(text => {
+            try{
+             setTimeout(async() => {
+                let c = await bot.sendMessage(chat.id, text)
+                console.log(c)
+            })
+                
+    } catch (err) {
+    console.log(err)
+    }
+            });
+        }
+        break;
+
         case (text == 'Chanakya'): {
             fetch('https://randomquotesbot.herokuapp.com/chanakya').then(res => res.text()).then(text => {
             try{
@@ -150,7 +165,7 @@ bot.on('message', async (msg) => {
  bot.onText(/🧠💭 Lessons/, (msg) => {
     bot.sendMessage(msg.chat.id, "From Who You Want To Learn ?", {
         'reply_markup': {
-            'keyboard': [['Chanakya', 'Kapil Gupta'], ['Marcus Aurelius', 'Naval Ravikant'],['Nassim Taleb', 'Seneca'],['Socrates', 'Swami Vivekanand']],
+            'keyboard': [['Chanakya', 'Kapil Gupta'], ['Marcus Aurelius', 'Naval Ravikant'],['Nassim Taleb', 'Seneca'],['Socrates', 'Swami Vivekanand'],['Rabindranath Tagore']],
             resize_keyboard: true,
             one_time_keyboard: false,
             force_reply: true,
