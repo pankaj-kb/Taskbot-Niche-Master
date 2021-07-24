@@ -163,7 +163,7 @@ bot.on('message', async (msg) => {
  });
 
  bot.onText(/🧠💭 Lessons/, (msg) => {
-    bot.sendMessage(msg.chat.id, "From Who You Want To Learn ?", {
+    bot.sendMessage(msg.chat.id, {
         'reply_markup': {
             'keyboard': [['Chanakya', 'Kapil Gupta', 'Marcus Aurelius'], ['Naval Ravikant', 'Nassim Taleb', 'Seneca'], ['Socrates', 'Swami Vivekanand' , 'Rabindranath Tagore']],
             resize_keyboard: true,
