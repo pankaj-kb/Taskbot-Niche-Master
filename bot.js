@@ -149,12 +149,15 @@ bot.on('message', async (msg) => {
         break;
 
         case (text == 'How To Get Rich'): {
-            fetch('https://randomquotesbot.herokuapp.com/htgr').then(res => res.text()).then(text => {
-            {
-                let c = bot.sendMessage(chat.id, text)
-                console.log(c)
-                }
-});
+            const fs = require('fs')
+            fs.readFile('htgr.txt', 'utf8' , (err, data) => {
+            if (err) {
+            console.error(err)
+            return
+            }
+            let c = bot.sendMessage(chat.id, data)
+           console.log(c)
+        })
         }
     }
     });
