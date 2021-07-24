@@ -43,6 +43,20 @@ bot.on('message', async (msg) => {
                 });
             }
             break;
+            case (text == 'About Naval'): {
+                fetch('https://randomquotesbot.herokuapp.com/aboutnaval').then(res => res.text()).then(text => {
+                try{
+                 setTimeout(async() => {
+                    let c = await bot.sendMessage(chat.id, text)
+                    console.log(c)
+                })
+                    
+            } catch (err) {
+            console.log(err)
+            }
+                    });
+                }
+                break;
 
         case (text == 'Marcus Aurelius'): {
             fetch('https://randomquotesbot.herokuapp.com/marcus').then(res => res.text()).then(text => {
