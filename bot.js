@@ -164,7 +164,7 @@ bot.on('message', async (msg) => {
 bot.onText(/🧠💭 Lessons/, (msg) => {
     bot.sendMessage(msg.chat.id, "From Who You Want To Learn ?", {
         'reply_markup': {
-            'keyboard': [['💡 Philosophers', '👔 Personalities']],
+            'keyboard': [['💡 Philosopher', '👔 Personalities']],
             resize_keyboard: true,
             one_time_keyboard: true,
             force_reply: true,
@@ -175,7 +175,7 @@ bot.onText(/🧠💭 Lessons/, (msg) => {
  });
 
  bot.onText(/💡 Philosopher/, (msg) => {
-    bot.sendMessage(msg.chat.id, "From Who You Want To Learn ?", {
+    bot.sendMessage(msg.chat.id, "Choose Your Guru", {
         'reply_markup': {
             'keyboard': [['Chanakya', 'Seneca', 'Marcus Aurelius'],['Socrates', 'Swami Vivekanand' , 'Rabindranath Tagore']],
             resize_keyboard: true,
@@ -187,7 +187,7 @@ bot.onText(/🧠💭 Lessons/, (msg) => {
     
  });
  bot.onText(/👔 Personalities/, (msg) => {
-    bot.sendMessage(msg.chat.id, "From Who You Want To Learn ?", {
+    bot.sendMessage(msg.chat.id, "Choose Your Guru", {
         'reply_markup': {
             'keyboard': [['Kapil Gupta', 'Naval Ravikant', 'Nassim Taleb']],
             resize_keyboard: true,
