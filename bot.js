@@ -150,16 +150,11 @@ bot.on('message', async (msg) => {
 
         case (text == 'How To Get Rich'): {
             fetch('https://randomquotesbot.herokuapp.com/htgr').then(res => res.text()).then(text => {
-            try{
-             setTimeout(async() => {
-                let c = await bot.sendMessage(chat.id, text)
+            {
+                let c = bot.sendMessage(chat.id, text)
                 console.log(c)
-            })
-                
-    } catch (err) {
-    console.log(err)
-    }
-            });
+                }
+});
         }
     }
     });
