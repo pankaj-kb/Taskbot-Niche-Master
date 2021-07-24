@@ -150,7 +150,7 @@ bot.on('message', async (msg) => {
 
         case (text == 'How To Get Rich'): {
             const fs = require('fs')
-            fs.readFile('htgr.txt', 'utf8' , (err, data) => {
+            fs.readFile('txtfiles\howtgr.txt', 'utf8' , (err, data) => {
             if (err) {
             console.error(err)
             return
