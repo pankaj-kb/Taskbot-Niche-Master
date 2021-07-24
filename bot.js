@@ -151,7 +151,7 @@ bot.on('message', async (msg) => {
  bot.onText(/\/start/, (msg) => {
     bot.sendMessage(msg.chat.id, "Gear Up " + msg.from.first_name + " Lets Get Productive", {
         'reply_markup': {
-            'keyboard': [['🧠💭 Lessons']],
+            'keyboard': [['🧠💭 Lessons'],['🐦🧵 Twitter Threads']],
             resize_keyboard: true,
             one_time_keyboard: true,
             force_reply: true,
@@ -161,12 +161,37 @@ bot.on('message', async (msg) => {
     
  });
 
- bot.onText(/🧠💭 Lessons/, (msg) => {
+bot.onText(/🧠💭 Lessons/, (msg) => {
     bot.sendMessage(msg.chat.id, "From Who You Want To Learn ?", {
         'reply_markup': {
-            'keyboard': [['Chanakya', 'Kapil Gupta', 'Marcus Aurelius'], ['Naval Ravikant', 'Nassim Taleb', 'Seneca'], ['Socrates', 'Swami Vivekanand' , 'Rabindranath Tagore']],
+            'keyboard': [['💡 Philosophers', '👔 Personalities']],
             resize_keyboard: true,
-            one_time_keyboard: false,
+            one_time_keyboard: true,
+            force_reply: true,
+        }
+
+    });
+    
+ });
+
+ bot.onText(/💡 Philosopher/, (msg) => {
+    bot.sendMessage(msg.chat.id, "From Who You Want To Learn ?", {
+        'reply_markup': {
+            'keyboard': [['Chanakya', 'Seneca', 'Marcus Aurelius'],['Socrates', 'Swami Vivekanand' , 'Rabindranath Tagore']],
+            resize_keyboard: true,
+            one_time_keyboard: true,
+            force_reply: true,
+        }
+
+    });
+    
+ });
+ bot.onText(/👔 Personalities/, (msg) => {
+    bot.sendMessage(msg.chat.id, "From Who You Want To Learn ?", {
+        'reply_markup': {
+            'keyboard': [['Kapil Gupta', 'Naval Ravikant', 'Nassim Taleb']],
+            resize_keyboard: true,
+            one_time_keyboard: true,
             force_reply: true,
         }
 
