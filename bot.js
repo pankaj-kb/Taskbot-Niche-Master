@@ -146,12 +146,27 @@ bot.on('message', async (msg) => {
     }
             });
         }
+        break;
+
+        case (text == 'How To Get Rich'): {
+            fetch('https://randomquotesbot.herokuapp.com/htgr').then(res => res.text()).then(text => {
+            try{
+             setTimeout(async() => {
+                let c = await bot.sendMessage(chat.id, text)
+                console.log(c)
+            })
+                
+    } catch (err) {
+    console.log(err)
+    }
+            });
+        }
     }
     });
  bot.onText(/\/start/, (msg) => {
     bot.sendMessage(msg.chat.id, "Gear Up " + msg.from.first_name + " Lets Get Productive", {
         'reply_markup': {
-            'keyboard': [['🧠💭 Lessons'],['🐦🧵 Twitter Threads']],
+            'keyboard': [['🧠💭 Lessons'],['🧵 Twitter Threads']],
             resize_keyboard: true,
             one_time_keyboard: true,
             force_reply: true,
@@ -174,6 +189,19 @@ bot.onText(/🧠💭 Lessons/, (msg) => {
     
  });
 
+ bot.onText(/🧵 Twitter Threads/, (msg) => {
+    bot.sendMessage(msg.chat.id, "Please Choose", {
+        'reply_markup': {
+            'keyboard': [['How To Get Rich']],
+            resize_keyboard: true,
+            one_time_keyboard: true,
+            force_reply: true,
+        }
+
+    });
+    
+ });
+
  bot.onText(/💡 Philosopher/, (msg) => {
     bot.sendMessage(msg.chat.id, "Choose Your Guru", {
         'reply_markup': {
@@ -186,6 +214,7 @@ bot.onText(/🧠💭 Lessons/, (msg) => {
     });
     
  });
+
  bot.onText(/👔 Personalities/, (msg) => {
     bot.sendMessage(msg.chat.id, "Choose Your Guru", {
         'reply_markup': {
