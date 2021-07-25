@@ -12,6 +12,8 @@ const bot = new TelegramBot(token, {
         }
     }
 })
+
+// Authors Quote Section Begins here.
 bot.on('message', async (msg) => {
     const { chat, text, from } = msg
     switch (true) {
@@ -148,7 +150,9 @@ bot.on('message', async (msg) => {
         }
         break;
 
-        case (text == 'How To Get Rich'): {
+        //Twitter Threads Begins Here
+
+        case (text == 'How To Get Rich (Without Getting Lucky)'): {
             const fs = require('fs')
             fs.readFile('txtfiles/htgr.txt', 'utf8' , (err, part1) => {
             let c = bot.sendMessage(chat.id, part1)
@@ -159,8 +163,19 @@ bot.on('message', async (msg) => {
             console.log(d)
         })
         }
+        break;
+
+        case (text == 'Meditation - The Art of Doing Nothing:'): {
+            const fs = require('fs')
+            fs.readFile('txtfiles/meditation.txt', 'utf8' , (err, part1) => {
+            let c = bot.sendMessage(chat.id, part1)
+            console.log(c)
+        })
+        }
     }
     });
+
+    //Start Message Here.
  bot.onText(/\/start/, (msg) => {
     bot.sendMessage(msg.chat.id, "Gear Up " + msg.from.first_name + " Lets Get Productive", {
         'reply_markup': {
@@ -174,6 +189,7 @@ bot.on('message', async (msg) => {
     
  });
 
+    // 1st Menu
 bot.onText(/🧠💭 Lessons/, (msg) => {
     bot.sendMessage(msg.chat.id, "From Who You Want To Learn ?", {
         'reply_markup': {
@@ -187,7 +203,7 @@ bot.onText(/🧠💭 Lessons/, (msg) => {
     
  });
 
- bot.onText(/🧵 Twitter Threads/, (msg) => {
+bot.onText(/🧵 Twitter Threads/, (msg) => {
     bot.sendMessage(msg.chat.id, "Please Choose", {
         'reply_markup': {
             'keyboard': [['How To Get Rich']],
@@ -199,6 +215,8 @@ bot.onText(/🧠💭 Lessons/, (msg) => {
     });
     
  });
+
+ // Philosopher Menu
 
  bot.onText(/💡 Philosopher/, (msg) => {
     bot.sendMessage(msg.chat.id, "Choose Your Guru", {
@@ -212,6 +230,8 @@ bot.onText(/🧠💭 Lessons/, (msg) => {
     });
     
  });
+
+ // Personalities Menu
 
  bot.onText(/👔 Personalities/, (msg) => {
     bot.sendMessage(msg.chat.id, "Choose Your Guru", {
