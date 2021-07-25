@@ -165,7 +165,7 @@ bot.on('message', async (msg) => {
         }
         break;
 
-        case (text == 'Meditation - The Art of Doing Nothing:'): {
+        case (text == 'Meditation - The Art of Doing Nothing'): {
             const fs = require('fs')
             fs.readFile('txtfiles/meditation.txt', 'utf8' , (err, part1) => {
             let c = bot.sendMessage(chat.id, part1)
@@ -206,7 +206,7 @@ bot.onText(/🧠💭 Lessons/, (msg) => {
 bot.onText(/🧵 Twitter Threads/, (msg) => {
     bot.sendMessage(msg.chat.id, "Please Choose", {
         'reply_markup': {
-            'keyboard': [['How To Get Rich']],
+            'keyboard': [['How To Get Rich','Meditation - The Art of Doing Nothing']],
             resize_keyboard: true,
             one_time_keyboard: true,
             force_reply: true,
