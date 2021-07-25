@@ -52,3 +52,17 @@
 //     });
     
 //  });
+
+
+switch (true) {
+    case text == ".":
+        {
+            const fs = require("fs");
+            fs.readFile("./test.txt", "utf8", (err, part1) => {
+                let file = part1.split('\r')
+                console.log(file)
+                let c = client.sendMessage(chat.id, file[0]);
+            });
+        }
+        break;
+}

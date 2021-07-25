@@ -189,7 +189,7 @@ bot.on("message", async msg => {
       fs.readFile("txtfiles/meditation.txt", "utf8", (err, part1) => {
         let file = part1.split('\r')
         console.log(file)
-        let c = client.sendMessage(chat.id, file[0]);
+        let c = bot.sendMessage(chat.id, file[0]);
         console.log(c);
       });
     }
