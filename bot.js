@@ -150,13 +150,13 @@ bot.on('message', async (msg) => {
 
         case (text == 'How To Get Rich'): {
             const fs = require('fs')
-            fs.readFile('txtfiles/htgr.txt', 'utf8' , (err, data) => {
-            if (err) {
-            console.error(err)
-            return
-            }
-            let c = bot.sendMessage(chat.id, data)
-           console.log(c)
+            fs.readFile('txtfiles/htgr.txt', 'utf8' , (err, part1) => {
+            let c = bot.sendMessage(chat.id, part1)
+            console.log(c)
+        })
+        fs.readFile('txtfiles/htgr2.txt', 'utf8' , (err, part2) => {
+            let d = bot.sendMessage(chat.id, part2)
+            console.log(d)
         })
         }
     }
