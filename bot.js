@@ -167,31 +167,6 @@ bot.on("message", async msg => {
           });
       }
       break;
-
-    //Twitter Threads Begins Here
-
-    case text == "How To Get Rich (Without Getting Lucky)":
-      {
-        const fs = require("fs");
-        fs.readFile("txtfiles/htgr.txt", "utf8", (err, part1) => {
-          let c = bot.sendMessage(chat.id, part1);
-          console.log(c);
-        });
-        fs.readFile("txtfiles/htgr2.txt", "utf8", (err, part2) => {
-          let d = bot.sendMessage(chat.id, part2);
-          console.log(d);
-        });
-      }
-      break;
-
-    case text == "Meditation - The Art of Doing Nothing": {
-      const fs = require("fs");
-      fs.readFile("txtfiles/meditation.txt", "utf8", (err, part1) => {
-        let file = part1.split("\r");
-        console.log(file);
-        let c = bot.sendMessage(chat.id, file[0]);
-      });
-    }
   }
 });
 
@@ -202,7 +177,7 @@ bot.onText(/\/start/, msg => {
     "Gear Up " + msg.from.first_name + " Lets Get Productive",
     {
       reply_markup: {
-        keyboard: [["🧠💭 Lessons"], ["🧵 Twitter Threads"]],
+        keyboard: [["🧠💭 Lessons"]],
         resize_keyboard: true,
         one_time_keyboard: true,
         force_reply: true
@@ -216,17 +191,6 @@ bot.onText(/🧠💭 Lessons/, msg => {
   bot.sendMessage(msg.chat.id, "From Who You Want To Learn ?", {
     reply_markup: {
       keyboard: [["💡 Philosopher", "👔 Personalities"]],
-      resize_keyboard: true,
-      one_time_keyboard: true,
-      force_reply: true
-    }
-  });
-});
-
-bot.onText(/🧵 Twitter Threads/, msg => {
-  bot.sendMessage(msg.chat.id, "Please Choose", {
-    reply_markup: {
-      keyboard: [["How To Get Rich (Without Getting Lucky)", "Meditation - The Art of Doing Nothing"]],
       resize_keyboard: true,
       one_time_keyboard: true,
       force_reply: true
