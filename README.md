@@ -1,4 +1,5 @@
-We Created a Telegram bot that will send You Random , Quotes , Insights from Famous Philosophers and Entrepreneurs.
+Telegram bot that will send You Random , Quotes , Insights from Famous Philosophers and Entrepreneurs.
+here - https://t.me/Niche_Master_bot
 just press start then click on lessons to get going.
 
 The Dependencies are following - 
